@@ -6,7 +6,7 @@ require 'fileutils'
 require 'pathname'
 
 require 'etc'
-proc= Etc.nprocessors - 1
+proc= etc.nprocessors - 1
 memory=free -m | grep -w "Mem" | awk '{ print $2 }'
 mem=  memory.to_i * 0.9
 @options = {:num_procs => proc, :memory => mem}
