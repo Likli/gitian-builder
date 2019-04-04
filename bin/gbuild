@@ -7,7 +7,7 @@ require 'pathname'
 require 'etc'
 
 proc = Etc.nprocessors - 1
-memory ='free -m | grep -w "Mem" | awk '{ print $2 }''
+memory = `free -m | grep -w "Mem" | awk '{ print $2 }'`
 mem =  memory.to_i * 0.9
 
 @options = {
