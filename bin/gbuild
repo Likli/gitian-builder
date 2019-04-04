@@ -4,10 +4,10 @@ require 'optparse'
 require 'yaml'
 require 'fileutils'
 require 'pathname'
-
 require 'etc'
-proc= etc.nprocessors - 1
-memory=free -m | grep -w "Mem" | awk '{ print $2 }'
+
+proc= Etc.nprocessors - 1
+memory=`free -m | grep -w "Mem" | awk '{ print $2 }'`
 mem=  memory.to_i * 0.9
 @options = {:num_procs => proc, :memory => mem}
 
