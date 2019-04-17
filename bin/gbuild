@@ -209,7 +209,7 @@ build_dir = 'build'
 @result_dir = '/shared/result'
 @cache_dir = '/shared/cache'
 inputs_dir = 'inputs'
-mac_sdk = "#{@cache_dir}/MacOSX10.11.sdk.tar.gz"
+mac_sdk = "#{@cache_dir}/MacOSX10.14.sdk.tar.gz"
 
 var_dir = 'var'
 enable_cache = build_desc["enable_cache"]
