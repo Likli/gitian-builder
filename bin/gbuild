@@ -4,8 +4,15 @@ require 'optparse'
 require 'yaml'
 require 'fileutils'
 require 'pathname'
+require 'etc'
 
-@options = {:num_procs => 2, :memory => 2000}
+proc= Etc.nprocessors - 1
+
+memory=`free -m | grep -w "Mem" | awk '{ print $2 }'`
+
+mem=  memory.to_i * 0.9
+
+@options = {:num_procs => proc, :memory => mem}
 
 @bitness = {
   'i386' => 32,
